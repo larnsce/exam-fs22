@@ -1,0 +1,123 @@
+---
+title: "rbtl-fs22 end-of-semester exam"
+subtitle: "Section 02"
+format: html
+editor: visual
+execute: 
+  echo: true
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Points
+
+The maximum number of points for this section is: **13 out of 50**. The number of points for each task is shown in parenthesis next to the task number.
+
+# Task 2.0 (0.5)
+
+1.  Render the document and fix any errors.
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+generation <- read_csv("data/what_a_waste/what-a-waste-city-level-data-generation.csv")
+
+population <- read_csv("data/what_a_waste/what-a-waste-city-level-data-population.csv")
+
+country_income <- read_csv("data/what_a_waste/what-a-waste-city-level-data-country-income.csv")
+```
+
+# Task 2.1 (1)
+
+**Write the code yourself**
+
+1.  Use the `filter()` function to remove all NAs from the `generation` data object.
+
+2.  Store the result as a new object in your environment with the name `generation_complete`.
+
+```{r}
+
+
+
+```
+
+# Task 2.2 (3)
+
+**Write the code yourself**
+
+1.  How many countries have data for the `pop` variable in the `population` data object? Write code to answer this question. 357 countries (all)
+
+2.  Starting with the `generation_complete` data object, use the `left_join()` function to join with the `population` data object.
+
+3.  Why does the resulting data object have data for 326 countries and not for the identified number of countries with population data? **1** Because the `left_join` function keeps the complete data for the dataframe that comes first.
+
+4.  Store the result as a new object in your environment with the name `generation_joined`.
+
+```{r}
+
+
+```
+
+# Task 2.3 (2)
+
+**Write the code yourself**
+
+1.  Use the `mutate()` function to add a new column to `generation_joined` that is the municipal solid waste generation per capita in kg/year. Name the column `msw_generation_capita_kg_year`.
+
+2.  Use the pipe operator to add another line of code which uses the `relocate()` function to move the `msw_generation_capita_kg_year` after the `city` column.
+
+3.  Use the pipe operator to add another line of code which uses the `select()` function to remove the `msw_generation_tons_year` column.
+
+4.  Store the result as a new object in your environment with the name `generation_capita`.
+
+```{r}
+
+```
+
+# Task 2.4 (2)
+
+**Write the code yourself**
+
+1.  Starting with `generation_capita`, use a function of the slice family of functions to return the 5 countries with the highest municipal solid waste generation.
+
+2.  Use the pipe operator to add another line of code, then use a function you have learnt in the course to display a formatted version of the returned dataframe from the previous step.
+
+```{r}
+
+
+```
+
+# Task 2.5 (4)
+
+**Write the code yourself**
+
+1.  Use the data stored in `generation_country_income` to prepare a box- and jitterplot that displays income on the x-axis and municipal solid waste generation on the y-axis.
+
+2.  Add a color aesthetic for the income categories and use the `theme()` function to remove the legend from the plot.
+
+3.  Set the width of the jitter to a value of 0.2.
+
+4.  Set the transparency for the points in the jitter to a value of 0.75.
+
+5.  Set the size of the points in the jitter to a value of 2.
+
+6.  Do not display the outliers for the boxplot.
+
+7.  Change the color palette to colors of your choice.
+
+```{r}
+
+generation_country_income <- read_rds("data/what_a_waste/what-a-waste-city-level-data-country-income.rds")
+
+
+
+```
+
+# Task 2.6 - Hand-in (0.5)
+
+1.  Render the document and fix any errors.
+
+Last complete render: `r Sys.time()` at timezone `r Sys.timezone()`.

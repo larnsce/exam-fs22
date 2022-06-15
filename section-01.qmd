@@ -1,0 +1,150 @@
+---
+title: "rbtl-fs22 end-of-semester exam"
+subtitle: "Section 01"
+format: html
+execute: 
+  eval: false
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+# Points
+
+The maximum number of points for this section is: **12 out of 50**. The number of points for each task is shown in parenthesis next to the task number.
+
+# Task 1.0 (0.5)
+
+1.  Render the document and fix any errors.
+
+```{r}
+#| eval: true
+library(tidyverse)
+```
+
+# Task 1.1 (1)
+
+**Fill in the blanks**
+
+1.  Use the `read_csv` function to import the following two CSV files from the "data/what_a\_waste/" directory:
+
+-   `what-a-waste-city-level-data.csv`, and assign to the object `city_data`
+-   `what-a-waste-city-level-data-distance.csv`, and assign to the object `distance`
+
+```{r}
+
+city_data <- ___(___) 
+
+distance <- ___(___) 
+
+```
+
+# Task 1.2 (1)
+
+**Fill in the blanks**
+
+1.  Start with the `city_data` object and use the `select()` function to create a subset that only keeps the following variables:
+
+-   city
+-   income_id
+-   all variables that start with "waste"
+
+```{r}
+
+___ %>% 
+  select(___) 
+
+```
+
+# Task 1.3 (1.5)
+
+**Fill in the blanks**
+
+1.  Start with the `city_data` object and use the `select()` function to create a subset that only keeps the following variables:
+
+-   city
+-   income_id
+-   all variables that contain the word string "distance"
+-   not transportation_distance_na
+
+```{r}
+
+city_data ___
+  select(___) 
+
+```
+
+# Task 1.4 (1)
+
+**Fill in the blanks**
+
+1.  Start with the `distance` object and use a function of your choice to create a subset that removes NAs from the variable which stores values for the total transporation distance in km/year.
+
+2.  Store the subset as a new object in your environment with the name `distance_complete`
+
+```{r}
+
+distance_complete <- ___ %>% 
+  ___(___) 
+
+```
+
+# Task 1.5 (1)
+
+**Fill in the blanks**
+
+1.  Start with the `distance_complete` object and use the `arrange()` function to display the 'transporation_distance_disposal_site' variable in descending order.
+
+```{r}
+
+distance_complete %>% 
+  ___(___) 
+
+```
+
+# Task 1.6 (2.5)
+
+**Fill in the blanks**
+
+1.  Use the `mutate()` function to add a new column to `distance_complete` that is the number of trips per day. Name the column `trips_day`.
+
+2.  Use the pipe operator to add another line of code which uses the `mutate()` function to add a new column that is the number of trips per 1000 people and day. Name the column `trips_1000_ppl_day`.
+
+3.  Store the result as a new object in your environment with the name `distance_complete_extended`
+
+```{r}
+
+distance_complete_extended <- distance_complete %>% 
+  ___(trips_day = transportation_distance_total_km_year / transporation_distance_disposal_site / ___) %>%
+  ___(trips_1000_ppl_day = trips_day / ___ * ___) 
+
+```
+
+# Task 1.7 (1)
+
+**Fill in the blanks**
+
+1.  Use the `filter()` function to create a subset from `distance_complete_extended` containing observations for cities where the number of trips per 1000 people and day is between 1 (inclusive) and 2 (not inclusive).
+
+```{r}
+
+distance_complete_extended %>% 
+  ___(___) 
+
+```
+
+# Task 1.8 (2)
+
+1.  Edit the YAML header to add your name to be displayed as the author of this document in the rendered HTML file.
+
+2.  Edit the YAML header with options to display a table of contents in the rendered HTML file.
+
+3.  Edit the YAML header to not display warnings in the rendered HTML file.
+
+4.  Edit the YAML header to change value at `eval:` from `false` to `true`.
+
+# Task 1.9 - Hand-in (0.5)
+
+1.  Render the document and fix any errors.
+
+Last complete render: `r Sys.time()` at timezone `r Sys.timezone()`.

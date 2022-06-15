@@ -1,0 +1,94 @@
+---
+title: "rbtl-fs22 end-of-semester exam"
+subtitle: "Section 03"
+format: html
+editor: visual
+execute: 
+  echo: true
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Points
+
+The maximum number of points for this section is: **12 out of 50**. The number of points for each task is shown in parenthesis next to the task number.
+
+# Task 3.0 (0.5)
+
+1.  Render the document and fix any errors.
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+
+treatment <- read_csv("data/what_a_waste/what-a-waste-city-level-data-treatment.csv")
+
+```
+
+# Task 3.1 (1.5)
+
+1.  Starting with the `treatment` data object, use functions taught during the course to answer the following question:
+
+How many cities are covered in this dataset? 199 cities
+
+```{r}
+
+
+
+```
+
+# Task 3.2 (2)
+
+1.  Starting with the `treatment` data object, use functions taught during the course to answer the following question:
+
+Which country has the greatest number of cities in the dataset, and how many cities is that? India with 420 cities
+
+```{r}
+
+
+
+```
+
+# Task 3.3 (1.5)
+
+1.  Starting with the `treatment` data object, use functions taught during the course to answer the following question:
+
+In how many countries is all waste (100%) openly dumped? 27 cities
+
+```{r}
+
+
+```
+
+# Task 3.4 (2)
+
+1.  Starting with the `treatment` data object, use functions taught during the course to answer the following question:
+
+How many cities in which no waste (0%) is recycled fall into each income category?
+
+```{r}
+
+
+
+```
+
+# Task 3.5 (4)
+
+1.  Starting with the `treatment` data object, use functions taught during the course to answer the following question:
+
+What is the mean, median, and standard deviation of treatment percentages for each waste treatment option and grouped by income?
+
+```{r}
+
+
+
+```
+
+# Task 3.6 - Hand-in (0.5)
+
+1.  Render the document and fix any errors.
+
+Last complete render: `r Sys.time()` at timezone `r Sys.timezone()`.
